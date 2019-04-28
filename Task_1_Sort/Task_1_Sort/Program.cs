@@ -37,16 +37,48 @@ namespace Task_1_Sort
             }
         }
 
+        public void findElem()
+        { 
+        	// ОПРЕДЕЛЯЕМ ЗАДАННОЕ ЗНАЧЕНИЕ ДЛЯ ПОИСКА ПО МАССИВУ
+        	Console.WriteLine("Введите число = ");
+        	int f1 = Convert.ToInt32(Console.ReadLine());
+        	
+        	for (int i = 0; i < a.Length; i++) 
+            {
+            	if (a[i] != f1) 
+            	{ 
+            		//Console.WriteLine($"введенного значения {a[i]} в массиве НЕ НАЙДЕНО");
+            	}
+            	else 
+            	{ 
+            		Console.WriteLine($"введенное значение {a[i]} присутствует в массиве!");
+            		break;
+            	}
+            	if (i == a.Length-1) 
+            	{ 
+            		Console.WriteLine($"введенного значения {f1} в массиве НЕ НАЙДЕНО");
+            	}
+            }
+        }
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Дан массив целых чисел из 8 элементов: ");
+        	Console.WriteLine("ЗАДАНИЕ-1:");
+            Console.WriteLine("\nДан массив целых чисел из 8 элементов: ");
 
             Program sort = new Program();
             sort.PrintArray();
             sort.bubbleSort();
-            Console.WriteLine();
-            Console.WriteLine("ОТСОРТИРОВАННЫЙ МАССИВ :");
+
+            Console.WriteLine("\nОТСОРТИРОВАННЫЙ МАССИВ :");
             sort.PrintArray();
+
+            Console.WriteLine();
+            Console.WriteLine($"\nЗАДАНИЕ-2: \nПоиск заданного значения в отсортированном массиве.");
+            Console.WriteLine();
+
+            sort.findElem();
+
             Console.ReadKey();
 
         }
