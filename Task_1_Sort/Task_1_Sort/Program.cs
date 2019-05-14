@@ -42,12 +42,12 @@ namespace Task_1_Sort
         public void CheckInput()
         {
             // ВВЕДЕМ ЗНАЧЕНИЕ ДЛЯ ПОИСКА ПО МАССИВУ
-            Console.WriteLine("\nВведите число = ");
+            Console.Write("\nВведите число = ");
 
             // -- старый вариант --
             // int f1 = Convert.ToInt32(Console.ReadLine());
 
-            
+
             // -- новый вариант --
             string stroka = Console.ReadLine();
 
@@ -70,22 +70,31 @@ namespace Task_1_Sort
 
         public void FindElem()
         {
-            for (int i = 0; i < a.Length; i++)
+            // ДОБАВИЛ ПРОВЕРКУ ПУСТОГО МАССИВА
+            if (a.Length != 0)
             {
-                if (a[i] != f1)
+                for (int i = 0; i < a.Length; i++)
+                {
+                    if (a[i] != f1)
                     {
-                    //Console.WriteLine($"введенного значения {a[i]} в массиве НЕ НАЙДЕНО");
-                }
-                else
-                {
-                    Console.WriteLine($"введенное значение {a[i]} присутствует в массиве!");
-                    break;
-                }
-                if (i == a.Length - 1)
-                {
-                    Console.WriteLine($"введенного значения {f1} в массиве НЕ НАЙДЕНО");
+                        //Console.WriteLine($"введенного значения {a[i]} в массиве НЕ НАЙДЕНО");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"введенное значение {a[i]} присутствует в массиве!");
+                        break;
+                    }
+                    if (i == a.Length - 1)
+                    {
+                        Console.WriteLine($"введенного значения {f1} в массиве НЕ НАЙДЕНО");
+                    }
                 }
             }
+            else
+            {
+                Console.WriteLine("Этот массив пуст");
+            }
+
         }
 
         static void Main(string[] args)
